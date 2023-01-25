@@ -12,6 +12,9 @@
 ##### How to Execute (from the command line)
 > `mvn clean test surefire-report:report`
 
+after running the above command, you should be able to see the following result
+![alt text](./target/Screenshot.png)
+
 ##### How to Execute (from the Jenkins)
 - Create a sample Job
 - then add the `mvn clean test surefire-report:report` command in the 'build' step
