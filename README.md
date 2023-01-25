@@ -7,10 +7,21 @@
 > Java, JUnit, Maven
 
 ##### Tools needs to be installed on the machine (and make sure they are on the system's PATH)
-> Java(>8), Maven
+> Java(>8), Maven, Git
+
+
+##### How to setup the project
+> Just run the following command from terminal:
+
+- `git clone https://github.com/nityagautam/cricketteamverification.git`
+	
+- `cd cricketteamverification`
+
 
 ##### How to Execute (from the command line)
-> `mvn clean test surefire-report:report`
+> Just run the following command:
+
+- `mvn clean test surefire-report:report`
 
 after running the above command, you should be able to see the following result
 ![alt text](./target/Screenshot.png)
