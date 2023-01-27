@@ -7,7 +7,7 @@
 > Java, JUnit, Maven
 
 ##### Tools needs to be installed on the machine (and make sure they are on the system's PATH)
-> Java(>8), Maven, Git
+> Java(>=7), Maven, Git
 
 
 ##### How to setup the project

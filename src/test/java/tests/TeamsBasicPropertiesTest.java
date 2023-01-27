@@ -29,7 +29,9 @@ public class TeamsBasicPropertiesTest extends BaseTest{
 	 * ----------------------------------
 	 */
 	int countForiegner = 0;
+	int expectedForiegnPlayers = 4;
 	int countWicketKeepers = 0;
+	int expectedWicketKeepers = 1;
 	final String homeCountry = "india";
 	final String countryKeyword = "country";
 	final String playerKeyword = "player";
@@ -61,7 +63,7 @@ public class TeamsBasicPropertiesTest extends BaseTest{
 		
 		// and then assert
 		System.out.println("[DEBUG] Total Wicket keepers: " + this.countWicketKeepers + "\n");
-		assertEquals(this.countWicketKeepers >= 1, true);
+		assertEquals(this.countWicketKeepers >= this.expectedWicketKeepers, true);
 	}
 	
 	@Test
@@ -80,7 +82,7 @@ public class TeamsBasicPropertiesTest extends BaseTest{
 		
 		// and then assert
 		System.out.println("[DEBUG] Total Foriegn Players: " + this.countForiegner + "\n");
-		assertEquals(this.countForiegner == 4, true);
+		assertEquals(this.countForiegner == this.expectedForiegnPlayers, true);
 	}
 	
 
