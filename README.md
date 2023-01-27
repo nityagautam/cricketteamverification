@@ -24,7 +24,7 @@
 - `mvn clean test surefire-report:report`
 
 after running the above command, you should be able to see the following result
-![alt text](./target/Screenshot.png)
+![alt text](./Screenshot.png)
 
 ##### How to Execute (from the Jenkins)
 - Create a sample Job
