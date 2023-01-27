@@ -6,11 +6,11 @@ package tests;
  */
 import static org.junit.Assert.assertEquals;
 
-import org.json.simple.JSONObject;
 import org.junit.Test;
+import org.json.simple.JSONObject;
 
-import config.Config;
 import utilities.JSONReader;
+import config.Configurations;
 
 /**
  * Test Class
@@ -22,7 +22,7 @@ import utilities.JSONReader;
  */
 
 @SuppressWarnings("unchecked")
-public class TeamsBasicPropertiesTest extends BaseTest{
+public class TeamsBasicPropertiesTest extends BaseTest implements Configurations {
 	
 	/*
 	 * Class properties/Members
@@ -38,7 +38,7 @@ public class TeamsBasicPropertiesTest extends BaseTest{
 	final String roleKeyword = "role";
 	final String expectedRole = "wicket-keeper";
 	
-	String fileName = Config.JSONFileLocation + Config.JSONFileName;
+	String fileName = JSONFileLocation + JSONFileName; // These, we are getting from an interface
 	JSONReader jsonReaderObj = new JSONReader(fileName, false);
 	
 	/*
