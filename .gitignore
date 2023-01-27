@@ -2,3 +2,5 @@
 *.lst
 *.class
 .settings
+target
+.DS_Store
