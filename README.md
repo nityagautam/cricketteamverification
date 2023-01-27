@@ -32,7 +32,7 @@ after running the above command, you should be able to see the following result
 
 ##### How to setup the test-data (a JSON file having all the data to verify)
 - Just place your test data JSON file inside the `./src/test/resources/YOUR_FILE.JSON`
-- then update your file in the `./src/test/java/config/config.java` accordingly
+- then update your file in the `./src/test/java/config/Configurations.java` accordingly
 
 ##### Where to find the test result
 - We can find the test results at `./reports/surefire-report.html` accordingly
