@@ -37,7 +37,7 @@ public class TeamsBasicPropertiesTest extends BaseTest{
 	final String expectedRole = "wicket-keeper";
 	
 	String fileName = Config.JSONFileLocation + Config.JSONFileName;
-	JSONReader jr = new JSONReader(fileName);
+	JSONReader jsonReaderObj = new JSONReader(fileName, false);
 	
 	/*
 	 * Test Methods goes here ...
@@ -49,12 +49,12 @@ public class TeamsBasicPropertiesTest extends BaseTest{
 		
 		// Extra logging
 		System.out.println("\n[DEBUG] Test- Team has At least one WicketKeeper ...");
-		System.out.println("[DEBUG] Team Name: " + this.jr.get("name") );
+		System.out.println("[DEBUG] Team Name: " + this.jsonReaderObj.get("name") );
 		
 		// Count for the wicker-keeper role
-		this.jr.getList(this.playerKeyword).forEach( obj -> { 
+		this.jsonReaderObj.getList(this.playerKeyword).forEach( obj -> { 
 			//System.out.println("[DEBUG] -> " + obj.toString());
-			if(jr.get(this.roleKeyword, (JSONObject)obj).toLowerCase().contains(this.expectedRole)) {
+			if(this.jsonReaderObj.get(this.roleKeyword, (JSONObject)obj).toLowerCase().contains(this.expectedRole)) {
 				this.countWicketKeepers += 1;
 			}
 		});
@@ -68,12 +68,12 @@ public class TeamsBasicPropertiesTest extends BaseTest{
 	public void verifyTeamHasOnlyFourForeignPlayers() {
 		// Extra logging
 		System.out.println("\n[DEBUG] Test- Team has 4 foriegn players ...");
-		System.out.println("[DEBUG] Team Name: " + this.jr.get("name") );
+		System.out.println("[DEBUG] Team Name: " + this.jsonReaderObj.get("name") );
 		
 		// Count for the non-home country players,
-		this.jr.getList("player").forEach( obj -> { 
+		this.jsonReaderObj.getList("player").forEach( obj -> { 
 			//System.out.println("[DEBUG] -> " + obj.toString());
-			if(!jr.get(this.countryKeyword, (JSONObject)obj).toLowerCase().contains(this.homeCountry)) {
+			if(!this.jsonReaderObj.get(this.countryKeyword, (JSONObject)obj).toLowerCase().contains(this.homeCountry)) {
 				this.countForiegner += 1;
 			}
 		});

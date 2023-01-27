@@ -21,6 +21,10 @@ import org.json.simple.parser.ParseException;
  */
 @SuppressWarnings("unchecked")
 public class JSONReader {
+	/*
+	 * Class properties/Members
+	 * ----------------------------------
+	 */
 	Object jsonFileObject;
 	JSONObject jsonObject;
 	JSONArray jsonArray;
@@ -33,31 +37,9 @@ public class JSONReader {
 	 * --------------------------------------------------------------------
 	 */
 	
-	/**
-	 * Constructor
-	 * @param file
-	 */
-	public JSONReader(String file) {
-		//JSON parser object to parse read file
-        this.jsonParser = new JSONParser(); 
-        try (FileReader reader = new FileReader(file))
-        {
-            //Read JSON file
-            this.jsonFileObject = jsonParser.parse(reader);
-            // Convert to the JSON Object (Treating entire json file as object; i.e start with {} )
-            this.jsonObject = (JSONObject) this.jsonFileObject;
-            
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-	}
 	
 	/**
-	 * Overloaded Constructor
+	 * User defined Constructor
 	 * @param file
 	 * @param asList
 	 */
@@ -68,8 +50,13 @@ public class JSONReader {
         {
             //Read JSON file
             this.jsonFileObject = jsonParser.parse(reader);
-            // Convert to the JSON Object (Treating entire json file as Array/List; i.e starts with [] )
-            this.jsonArray = (JSONArray) this.jsonFileObject;
+            if(asList == true) {
+            	// Convert to the JSON Object (Treating entire json file as Array/List; i.e starts with [] )
+                this.jsonArray = (JSONArray) this.jsonFileObject;
+            } else {
+            	// Convert to the JSON Object (Treating entire json file as object; i.e start with {} )
+                this.jsonObject = (JSONObject) this.jsonFileObject;
+            }
             
         } catch (FileNotFoundException e) {
             e.printStackTrace();
